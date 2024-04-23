@@ -4,16 +4,18 @@ from src.services.UserTypeService import UserTypeService
 
 main = Blueprint('userType_blueprint', __name__)
 
-@main.route('/', methods=['GET', 'POST'])
-def manage_usertype():
-    if request.method == 'GET':
-        return get_usertype()
-    elif request.method == 'POST':
-        return post_usertype()
+# @main.route('/', methods=['GET', 'POST'])
+# def manage_usertype():
+#     if request.method == 'GET':
+#         return get_usertype()
+#     elif request.method == 'POST':
+#         return post_usertype()
 
+@main.route('/get', methods=['GET'])
 def get_usertype():
-    get_usertype =UserTypeService.get_usertype()
-    print('userType se ve en consola')
+
+    get_usertype=UserTypeService.get_usertype()
+    print(get_usertype)
     return 'userType se ve en pagina'
 
 def post_usertype():
@@ -24,4 +26,4 @@ def post_usertype():
 
     print(post_usertype)
 
-    return 'Persona añadida'
+    return 'Tipo de usuario añadido'

@@ -21,14 +21,14 @@ main = Blueprint('orders_blueprint', __name__)
 #         return delete_orders(ID_Order)
 
 
-@main.route('/orders', methods=['GET'])
+@main.route('/get', methods=['GET'])
 def get_orders():
 
     get_orders=OrdersService.get_orders()
-  #  print (get_orders)
-    return get_orders()
+    print (get_orders)
+    return 'Esto es ordersRouter'
 
-@main.route('/orders', methods=['POST'])
+@main.route('/post', methods=['POST'])
 def post_orders():
 
     ID_Order = request.json['ID_Order']

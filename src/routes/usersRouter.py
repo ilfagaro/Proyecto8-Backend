@@ -12,7 +12,7 @@ main = Blueprint('users_blueprint', __name__)
 #     elif request.method == 'POST':
 #         return post_users()
 
-# @main.route('/<int:ID_User>', methods=['PUT', 'DELETE'])
+# @main.route('/users/<int:ID_User>', methods=['PUT', 'DELETE'])
 
 # def mofiy_users(ID_User):
 #     if request.method == 'PUT':
@@ -20,15 +20,14 @@ main = Blueprint('users_blueprint', __name__)
 #     elif request.method == 'DELETE':
 #         return delete_users(ID_User)
 
-
-@main.route('/users', methods=['GET', 'POST'])
+@main.route('/get', methods=['GET'])
 def get_users():
 
     get_users=UsersService.get_users()
-    # print (get_users)
-    return get_users()
+    print (get_users)
+    return 'Esto es del userRouter'
 
-@main.route('/users', methods=['POST'])
+@main.route('/post', methods=['POST'])
 def post_users():
     
     Name_User = request.json['Name_User']
@@ -43,7 +42,7 @@ def post_users():
     return post_users()
 
 
-@main.route('/<int:ID_User>', methods=['PUT'])
+@main.route('/users/<int:ID_User>', methods=['PUT'])
 def update_users(ID_User):
 
     ID_User = request.json['ID_User']

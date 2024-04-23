@@ -18,7 +18,7 @@ class UsersService():
                 print(result)
                            
             connection.close()
-            return 0    
+            return 'hola, este es el metodo get USER imprimido en la página'
 
         except Exception as ex:
 

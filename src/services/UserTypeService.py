@@ -14,7 +14,7 @@ class UserTypeService():
                 print(result)
 
             connection.close()
-            return 0
+            return 'hola, este es el metodo get usertype imprimido en la página'
 
         except Exception as ex:
 

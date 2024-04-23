@@ -4,7 +4,8 @@ from src.services.ProductService import ProductService
 
 main = Blueprint('product_blueprint', __name__)
 
-# @main.route('/', methods=['GET', 'POST'])
+#@main.route('/get', methods=['GET'])
+
 # def manage_product():
 #     if request.method == 'GET':
 #         return get_product()
@@ -15,17 +16,19 @@ main = Blueprint('product_blueprint', __name__)
 
 # def mofiy_product(ID_Product):
 #     if request.method == 'PUT':
-#         return put_product(ID_Product)
+#         return update_product(ID_Product)
 #     elif request.method == 'DELETE':
 #         return delete_product(ID_Product)
 
-@main.route('/products', methods=['GET'])
+@main.route('/get', methods=['GET'])
 def get_product():
-    get_product=ProductService.get_product()
-   # print (get_product)
-    return (get_product), 200, {'Content-Type': 'application/json'}
 
-@main.route('/products', methods=['POST'])
+    get_product=ProductService.get_product()
+    print (get_product)
+    return 'Esto es del productRouter'
+#
+@main.route ('/post', methods=['POST'])
+
 def post_product():
 
     Name_Product = request.json['Name_Product']
@@ -39,7 +42,7 @@ def post_product():
    # print(post_product)
     return post_product(), 200, {'Content-Type': 'application/json'} 
 
-@main.route('/products/<int:ID_Product>', methods=['PUT'])
+@main.route('/product/<int:ID_Product>', methods=['PUT'])
 def update_product(ID_Product):
 
     ID_Product = request.json['ID_Product']

@@ -4,18 +4,22 @@ from src.services.CategoryproductService import CategoryproductService
 
 main = Blueprint('categoryproduct_blueprint', __name__)
 
-@main.route('/', methods=['GET', 'POST'])
-def manage_categoryproduct():
-   if request.method == 'GET':
-      return get_categoryproduct()
-   elif request.method == 'POST':
-      return post_categoryproduct()
+# @main.route('/', methods=['GET', 'POST'])
 
+# def manage_categoryproduct():
+#    if request.method == 'GET':
+#       return get_categoryproduct()
+#    elif request.method == 'POST':
+#       return post_categoryproduct()
+
+
+@main.route('/get', methods=['GET'])
 def get_categoryproduct():
-   get_categoryproduct =CategoryproductService.get_categoryproduct()
-   print('categoryproduct se ve en consola')
-   return 'categoryproduct se ve en pagina'
 
+   get_categoryproduct=CategoryproductService.get_categoryproduct()
+   print (get_categoryproduct)
+   return 'Esto es categoryproductRouter'
+   
 def post_categoryproduct():
    ID_CategoryProduct = request.json['ID_CategoryProduct']
    Name_CategoryProduct = request.json['Name_CategoryProduct']
@@ -24,4 +28,4 @@ def post_categoryproduct():
 
    print(post_categoryproduct)
 
-   return 'Persona añadida'
+   return 'Categoria añadida'
