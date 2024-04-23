@@ -1,4 +1,4 @@
-class Users():
+class User():
     def __init__(self, ID_User, Name_User, Password_User, ID_UserType_FK, DNI_Person_FK, ) -> None:
         self.ID_User = ID_User
         self.Name_User = Name_User

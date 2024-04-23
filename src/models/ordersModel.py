@@ -1,4 +1,4 @@
-class OrdersModel():
+class Orders():
     def __init__(self, ID_Order, Date_Order, State_Order, ID_User_FK, ID_Product_FK) -> None:
                  
         self.ID_Order = ID_Order

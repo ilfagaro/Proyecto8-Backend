@@ -22,7 +22,7 @@ def init_app(config):
 
     app.register_blueprint(usersRouter.main, url_prefix='/users')
 
-    app.register_blueprint(userTypeRouter.main, url_prefix='/userType')
+    app.register_blueprint(userTypeRouter.main, url_prefix='/usertype')
 
     return app
 
